@@ -1,0 +1,20 @@
+{
+  "name": "pzpw",
+  "version": "0.0.4",
+  "description": "Project Zomboid PipeWrench command-line.",
+  "author": "Konijima",
+  "license": "ISC",
+  "main": "./lib/cli.js",
+  "bin": {
+    "pzpw": "./bin/index.js"
+  },
+  "dependencies": {
+    "colors": "^1.2.1",
+    "shelljs": "^0.8.5,"
+  },
+  "keywords": [
+    "Project Zomboid",
+    "PipeWrench",
+    "Modding Tools"
+  ]
+}
