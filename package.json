@@ -15,7 +15,12 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
+  "funding": {
+    "type" : "patreon",
+    "url" : "https://www.patreon.com/Konijima"
+  },
   "repository": "git@github.com:Konijima/pzpw.git",
+  "homepage": "https://github.com/Konijima/pzpw",
   "keywords": [
     "Project Zomboid",
     "PipeWrench",
