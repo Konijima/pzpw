@@ -4,7 +4,7 @@
 
 <br>
 
-## PipeWrench:
+## PipeWrench
 Developers:  [asledgehammer](https://asledgehammer.com)  
 Template Project: [PipeWrenchTemplate](https://github.com/asledgehammer/PipeWrenchTemplate)
 
