@@ -12,6 +12,10 @@
     "colors": "^1.2.1",
     "shelljs": "^0.8.5,"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": "git@github.com:Konijima/pzpw.git",
   "keywords": [
     "Project Zomboid",
     "PipeWrench",
