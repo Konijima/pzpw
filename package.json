@@ -10,11 +10,12 @@
   },
   "dependencies": {
     "colors": "^1.2.1",
+    "prompt": "^1.3.0",
     "shelljs": "^0.8.5"
   },
   "funding": {
-    "type" : "patreon",
-    "url" : "https://www.patreon.com/Konijima"
+    "type": "patreon",
+    "url": "https://www.patreon.com/Konijima"
   },
   "homepage": "https://github.com/Konijima/pzpw",
   "repository": "git@github.com:Konijima/pzpw.git",
