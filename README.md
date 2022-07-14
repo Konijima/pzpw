@@ -4,35 +4,42 @@
 
 <br>
 
-## PipeWrench
-Developers:  [asledgehammer](https://asledgehammer.com)  
-Template Project: [PipeWrenchTemplate](https://github.com/asledgehammer/PipeWrenchTemplate)
+# About PipeWrench
+Implemented TypeScript support for modding Project Zomboid.
+
+**Developers:**  https://asledgehammer.com  
+**Template:** https://github.com/asledgehammer/PipeWrenchTemplate  
+**Typing:** https://github.com/asledgehammer/PipeWrench
 
 <br>
 
-## Install
-```bash
+# Install
+
+```
 npm install -g pzpw
 ```
 
-## Commands
-```bash
-# Create a new PipeWrench project.
-> pzpw new <mod-name>
+<br>
+
+# Commands
+
+### Create a new PipeWrench project.
 ```
-```bash
-# Update your PipeWrench project.
-> pzpw update
+pzpw new <mod-name>
 ```
-```bash
-# Set or Generate your workshop project.
-> pzpw workshop <set|generate> <path>
+### Update your PipeWrench project.
 ```
-```bash
-# Compile your PipeWrench project.
-> pzpw compile
+pzpw update
 ```
-```bash
-# Show available commands.
-> pzpw help <command>
+### Set or Generate your workshop project.
+```
+pzpw workshop <set|generate> <path>
+```
+### Compile your PipeWrench project.
+```
+pzpw compile
+```
+### Show available commands.
+```
+pzpw help <command>
 ```
