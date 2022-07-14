@@ -1,28 +1,26 @@
 {
-  "name": "@konijima/pzpw",
+  "name": "pzpw",
   "version": "0.0.5",
   "description": "Project Zomboid PipeWrench command-line.",
   "author": "Konijima",
-  "license": "ISC",
+  "license": "MIT",
   "main": "./lib/cli.js",
   "bin": {
     "pzpw": "./bin/index.js"
   },
   "dependencies": {
     "colors": "^1.2.1",
-    "shelljs": "^0.8.5,"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "shelljs": "^0.8.5"
   },
   "funding": {
     "type" : "patreon",
     "url" : "https://www.patreon.com/Konijima"
   },
-  "repository": "git@github.com:Konijima/pzpw.git",
   "homepage": "https://github.com/Konijima/pzpw",
+  "repository": "git@github.com:Konijima/pzpw.git",
   "keywords": [
     "Project Zomboid",
+    "asledgehammer",
     "PipeWrench",
     "Modding Tools"
   ]
