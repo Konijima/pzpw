@@ -6,15 +6,15 @@ Implemented TypeScript support for modding Project Zomboid.
 
 **Developers:**
 
-> https://asledgehammer.com  
+https://asledgehammer.com  
 
 **Template:**
 
-> https://github.com/asledgehammer/PipeWrenchTemplate  
+https://github.com/asledgehammer/PipeWrenchTemplate  
 
 **Typing:**
 
-> https://github.com/asledgehammer/PipeWrench
+https://github.com/asledgehammer/PipeWrench
 
 <br>
 
@@ -24,17 +24,20 @@ Implemented TypeScript support for modding Project Zomboid.
 
 **Developer:**
 
-> https://github.com/Konijima
+https://github.com/Konijima
 
 **Template:** 
 
-> https://github.com/Konijima/PipeWrenchTemplate
+https://github.com/Konijima/PipeWrenchTemplate
 
 **Typing:**
 
-> `npm install -s Zomboid@https://github.com/Konijima/PipeWrench-Zomboid-Types`
-
-> `npm install -s ZomboidEvents@https://github.com/Konijima/PipeWrench-ZomboidEvents-Types`
+```
+npm install -s Zomboid@https://github.com/Konijima/PipeWrench-Zomboid-Types
+```
+```
+npm install -s ZomboidEvents@https://github.com/Konijima/PipeWrench-ZomboidEvents-Types
+```
 
 <br>
 
