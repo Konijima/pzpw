@@ -1,4 +1,4 @@
-![](https://github.com/Konijima/pzpw/blob/pzpw.png?raw=true)
+![](https://github.com/Konijima/pzpw/blob/master/pzpw.png?raw=true)
 
 # About PipeWrench
 
