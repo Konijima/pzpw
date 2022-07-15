@@ -58,11 +58,15 @@ npm install -g pzpw
 ```
 pzpw new <ModID> <ModName> <Author>
 ```
+### Add a module to your project. **(Not implemented)**
+```
+pzpw add <ModuleName>
+```
 ### Update pzpw, require sudo to execute.
 ```
 pzpw update
 ```
-### Set or Generate your workshop project.
+### Set or Generate your workshop project. **(Not implemented)**
 ```
 pzpw workshop <set|generate> <path>
 ```
