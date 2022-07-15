@@ -60,7 +60,7 @@ pzpw workshop <set|generate> <path>
 ```
 ### Compile your PipeWrench project.
 ```
-pzpw compile
+pzpw compile <dist|dev|export>
 ```
 ### Check current pzpw version.
 ```
