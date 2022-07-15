@@ -6,7 +6,7 @@ const colors = require("colors");
 const cli = require("../lib/cli");
 
 const currentDir = sh.pwd().toString();
-const command = process.argv[2] || "";
+const command = (process.argv[2] || "").toLowerCase();
 const args = process.argv.slice(3) || [];
 
 try {
