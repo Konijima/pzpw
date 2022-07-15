@@ -38,6 +38,12 @@ Implemented TypeScript support for modding Project Zomboid.
 
 <br>
 
+# Requirements
+- [NodeJS + npm](https://nodejs.org/en/download/) 
+- [git](https://git-scm.com/downloads)
+
+<br>
+
 # Install
 
 ```
