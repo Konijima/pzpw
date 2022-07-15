@@ -1,3 +1,5 @@
+![](https://github.com/Konijima/pzpw/blob/pzpw.png?raw=true)
+
 # About PipeWrench
 
 Implemented TypeScript support for modding Project Zomboid.
