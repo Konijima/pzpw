@@ -61,9 +61,9 @@ npm install -g pzpw
 ```
 pzpw new <ModID> <ModName> <Author>
 ```
-### Add a module to your project. **(Not implemented)**
+### Add a mod to your project. **(Not implemented)**
 ```
-pzpw add <ModuleName>
+pzpw add <ModName>
 ```
 ### Update pzpw, require sudo to execute.
 ```
@@ -75,7 +75,7 @@ pzpw workshop <set|generate> <path>
 ```
 ### Compile your PipeWrench project.
 ```
-pzpw compile <dist|dev|export>
+pzpw compile <distribution|development|workshop|declaration>
 ```
 ### Check current pzpw version.
 ```
