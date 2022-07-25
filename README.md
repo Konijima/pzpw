@@ -69,10 +69,6 @@ pzpw add <ModName>
 ```
 pzpw update
 ```
-### Set or Generate your workshop project. **(Not implemented)**
-```
-pzpw workshop <set|generate> <path>
-```
 ### Compile your PipeWrench project.
 ```
 pzpw compile <distribution|development|workshop|declaration>
