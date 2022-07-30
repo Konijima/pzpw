@@ -63,7 +63,7 @@ pzpw new <ModID> <ModName> <Author>
 ```
 ### Add a mod to your project. **(Not implemented)**
 ```
-pzpw add <ModName>
+pzpw add <ModID> <ModName>
 ```
 ### Update pzpw, require sudo to execute.
 ```
