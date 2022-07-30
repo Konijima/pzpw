@@ -1,12 +1,16 @@
 ![](https://github.com/Konijima/pzpw/blob/master/pzpw.png?raw=true)
 
-# About pzpw
+# About PZPW
 
 `pzpw` is a command-line tool to manage your PipeWrench project.
 
 **Developer:**
 
 https://github.com/Konijima
+
+**Template for PZPW:**
+
+https://github.com/Konijima/pzpw-template
 
 <br>
 
@@ -24,11 +28,14 @@ https://github.com/asledgehammer/PipeWrenchTemplate
 
 **Typing:**
 
-https://github.com/asledgehammer/PipeWrench
+- https://github.com/asledgehammer/PipeWrench
+- https://github.com/asledgehammer/PipeWrench-Events
+- https://github.com/asledgehammer/PipeWrench-Utils
 
 <br>
 
 # Requirements
+To use PZPW command-line you need these software installed on your machine.
 - [NodeJS + npm](https://nodejs.org/en/download/) 
 - [git](https://git-scm.com/downloads)
 
