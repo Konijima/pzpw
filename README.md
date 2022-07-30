@@ -61,7 +61,7 @@ npm install -g pzpw
 ```
 pzpw new <ModID> <ModName> <Author>
 ```
-### Add a mod to your project. **(Not implemented)**
+### Add an additional mod to your project.
 ```
 pzpw add <ModID> <ModName>
 ```
