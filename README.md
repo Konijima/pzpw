@@ -4,6 +4,10 @@
 
 `pzpw` is a command-line tool to manage your PipeWrench project.
 
+**PZPW Wiki**
+
+https://github.com/Konijima/pzpw/wiki
+
 **Developer:**
 
 https://github.com/Konijima
@@ -17,6 +21,10 @@ https://github.com/Konijima/pzpw-template
 # About PipeWrench
 
 Implemented TypeScript support for modding Project Zomboid.
+
+**PipeWrench Wiki**
+
+https://github.com/asledgehammer/PipeWrench/wiki
 
 **Developers:**
 
@@ -59,13 +67,21 @@ pzpw new <ModID> <ModName> <Author>
 ```
 pzpw add <ModID> <ModName>
 ```
-### Update pzpw, require sudo to execute.
+### Switch PipeWrench branch.
 ```
-pzpw update
+pzpw switch <stable|unstable>
+```
+### Update pzpw and project dependencies.
+```
+pzpw update <all|pzpw|project>
 ```
 ### Compile your PipeWrench project.
 ```
 pzpw compile <distribution|development|workshop|declaration>
+```
+### Link your PipeWrench project to a git repository.
+```
+pzpw git
 ```
 ### Check current pzpw version.
 ```
