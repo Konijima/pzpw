@@ -83,6 +83,10 @@ pzpw compile <distribution|development|workshop|declaration>
 ```
 pzpw git
 ```
+### Set project cachedir, e.g: C:\Users\Konijima\Zomboid
+```
+pzpw cachedir <set|unset>
+```
 ### Check current pzpw version.
 ```
 pzpw version
