@@ -83,7 +83,7 @@ pzpw compile <distribution|development|workshop|declaration>
 ```
 pzpw git
 ```
-### Set project cachedir, e.g: C:\Users\Konijima\Zomboid
+### Set project cachedir, e.g: C:/Users/Konijima/Zomboid
 ```
 pzpw cachedir <set|unset>
 ```
