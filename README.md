@@ -3,6 +3,8 @@
 [![Build](https://github.com/Konijima/pzpw/actions/workflows/Build.yml/badge.svg)](https://github.com/Konijima/pzpw/actions/workflows/Build.yml)
 [![npm version](https://badge.fury.io/js/pzpw.svg)](https://badge.fury.io/js/pzpw)
 
+Node command-line tool to create and manage PZPW projects.
+
 <br>
 
 [NPM](https://www.npmjs.com/search?q=pzpw) | [Template](https://github.com/Konijima/pzpw-template) | [Compiler](https://github.com/Konijima/pzpw-compiler) | [Donation](https://paypal.me/Konijima)
@@ -40,13 +42,13 @@ pzpw add <ModID> <ModName>
 ```
 pzpw switch <stable|unstable>
 ```
-### Update pzpw and project dependencies.
+### Update pzpw, compiler and project dependencies.
 ```
-pzpw update <all|pzpw|project>
+pzpw update <all|pzpw|compiler|project>
 ```
 ### Compile your PipeWrench project.
 ```
-pzpw compile <distribution|development|workshop|declaration>
+pzpw compile <mods|workshop>
 ```
 ### Link your PipeWrench project to a git repository.
 ```
@@ -54,7 +56,7 @@ pzpw git
 ```
 ### Set project cachedir, e.g: C:/Users/Konijima/Zomboid
 ```
-pzpw cachedir <set|unset>
+pzpw cachedir <get|set|unset>
 ```
 ### Check current pzpw version.
 ```
