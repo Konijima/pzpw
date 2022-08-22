@@ -151,7 +151,6 @@ export class Cli {
         }
 
         if (!['all', 'pzpw', 'compiler', 'project'].includes(params[0] as string)) {
-            await this.printIntro();
             console.log(chalk.gray(await getCommandHelp('update', true)));
         }
     }
@@ -201,7 +200,6 @@ export class Cli {
             }
         }
         else {
-            await this.printIntro();
             console.log(chalk.gray(await getCommandHelp('switch', true)));
         }
     }
