@@ -1,7 +1,7 @@
 Switch PipeWrench branch.
 ::FULL::
 Command:
-    pzpw switch <stable|unstable>
+    switch <stable|unstable>
 
 Usage:
     pzpw switch stable

@@ -32,11 +32,11 @@ npm install -g pzpw
 
 ### Create a new PipeWrench project.
 ```
-pzpw new <ModID> <ModName> <Author>
+pzpw new <modId> <modName> <author>
 ```
 ### Add an additional mod to your project.
 ```
-pzpw add <ModID> <ModName>
+pzpw add <modId> <modName>
 ```
 ### Switch PipeWrench branch.
 ```
@@ -46,13 +46,9 @@ pzpw switch <stable|unstable>
 ```
 pzpw update <all|pzpw|compiler|project>
 ```
-### Compile your PipeWrench project.
+### Execute a compiler command.
 ```
-pzpw compile <mods|workshop>
-```
-### Link your PipeWrench project to a git repository.
-```
-pzpw git
+pzpw compiler <command and args>
 ```
 ### Set project cachedir, e.g: C:/Users/Konijima/Zomboid
 ```

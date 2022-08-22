@@ -1,7 +1,7 @@
 Update pzpw, compiler and project dependencies.
 ::FULL::
 Command:
-    pzpw update <all|pzpw|compiler|project>
+    update <all|pzpw|compiler|project>
 
 Usage:
     pzpw update all

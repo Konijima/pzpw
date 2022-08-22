@@ -1,0 +1,7 @@
+Print the current version.
+::FULL::
+Command:
+    version
+
+Usage:
+    pzpw version

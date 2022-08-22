@@ -1,0 +1,7 @@
+Execute a compiler command.
+::FULL::
+Command:
+    compiler <command and arguments>
+
+Usage:
+    pzpw compiler mods mod1 mod2
