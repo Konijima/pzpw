@@ -1,55 +1,24 @@
-![](https://github.com/Konijima/pzpw/blob/master/pzpw.png?raw=true)
+# PZPW Compiler
 
-# About PZPW
-
-`pzpw` is a command-line tool to manage your PipeWrench project.
-
-**PZPW Wiki**
-
-https://github.com/Konijima/pzpw/wiki
-
-**Developer:**
-
-https://github.com/Konijima
-
-**Template for PZPW:**
-
-https://github.com/Konijima/pzpw-template
+[![Build](https://github.com/Konijima/pzpw/actions/workflows/Build.yml/badge.svg)](https://github.com/Konijima/pzpw/actions/workflows/Build.yml)
+[![npm version](https://badge.fury.io/js/pzpw.svg)](https://badge.fury.io/js/pzpw)
 
 <br>
 
-# About PipeWrench
-
-Implemented TypeScript support for modding Project Zomboid.
-
-**PipeWrench Wiki**
-
-https://github.com/asledgehammer/PipeWrench/wiki
-
-**Developers:**
-
-https://asledgehammer.com  
-
-**Template:**
-
-https://github.com/asledgehammer/PipeWrenchTemplate  
-
-**Typing:**
-
-- https://github.com/asledgehammer/PipeWrench
-- https://github.com/asledgehammer/PipeWrench-Events
-- https://github.com/asledgehammer/PipeWrench-Utils
+[NPM](https://www.npmjs.com/search?q=pzpw) | [Template](https://github.com/Konijima/pzpw-template) | [Compiler](https://github.com/Konijima/pzpw-compiler) | [Donation](https://paypal.me/Konijima)
+|---|---|---|---|
 
 <br>
 
 # Requirements
-To use PZPW command-line you need these software installed on your machine.
-- [NodeJS + npm](https://nodejs.org/en/download/) 
+To install and use PZPW you need `NodeJS`, `NPM` & `git`.
+- [Download NodeJS + NPM](https://nodejs.org/en/download/)  
+*Latest LTS Version: 16.17.0 (includes npm 8.15.0)*
 - [git](https://git-scm.com/downloads)
 
 <br>
 
-# Install
+# Installation
 
 ```
 npm install -g pzpw
@@ -95,3 +64,8 @@ pzpw version
 ```
 pzpw help <command>
 ```
+
+<br>
+
+> Apache License Version 2.0  
+> Copyright 2022 Konijima  

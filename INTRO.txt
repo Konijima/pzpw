@@ -1,0 +1,9 @@
+___  ___  ___  _ _ _ 
+|__]   /  |__] | | | 
+|     /__ |    |_|_| 
+
+       Author - {author}
+      Version - {version}
+   NPM Module - https://npmjs.com/package/pzpw
+  Source Code - https://github.com/Konijima/pzpw
+Donation Link - https://paypal.me/Konijima

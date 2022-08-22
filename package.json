@@ -1,28 +1,46 @@
 {
   "name": "pzpw",
-  "version": "0.1.7",
-  "description": "Project Zomboid PipeWrench command-line.",
-  "author": "Konijima",
-  "license": "MIT",
-  "main": "./lib/cli.js",
+  "version": "2.0.0-alpha",
+  "description": "Node command-line tool to manage PZPW projects.",
+  "main": "./dist/lib/cli.js",
+  "type": "module",
   "bin": {
-    "pzpw": "./bin/index.js"
+    "pzpw": "./dist/index.js"
   },
+  "types": "./dts",
+  "scripts": {
+    "clean": "del-cli --force ./dist ./dts",
+    "build": "npm run clean && tsc",
+    "watch": "npm run clean && tsc --watch"
+  },
+  "author": "Konijima",
+  "license": "Apache License Version 2.0",
+  "funding": {
+    "type": "paypal",
+    "url": "https://paypal.me/Konijima"
+  },
+  "homepage": "https://github.com/Konijima/pzpw#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Konijima/pzpw.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Konijima/pzpw/issues"
+  },
+  "keywords": [
+    "pzpw",
+    "pipewrench",
+    "typescript",
+    "project-zomboid"
+  ],
   "dependencies": {
-    "colors": "^1.2.1",
+    "chalk": "^5.0.1",
     "prompt": "^1.3.0",
     "shelljs": "^0.8.5"
   },
-  "funding": {
-    "type": "patreon",
-    "url": "https://www.patreon.com/Konijima"
-  },
-  "homepage": "https://github.com/Konijima/pzpw",
-  "repository": "git@github.com:Konijima/pzpw.git",
-  "keywords": [
-    "Project Zomboid",
-    "asledgehammer",
-    "PipeWrench",
-    "Modding Tools"
-  ]
+  "devDependencies": {
+    "@types/node": "^18.7.5",
+    "del-cli": "^4.0.1",
+    "typescript": "^4.7.4"
+  }
 }

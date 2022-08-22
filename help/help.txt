@@ -1,0 +1,8 @@
+Get help about commands.
+::FULL::
+Command:
+    help <command>
+
+Usage:
+    pzpw help
+    pzpw help update
