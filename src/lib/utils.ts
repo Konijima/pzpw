@@ -17,6 +17,16 @@ export async function getPackageJson() {
 }
 
 /**
+ * Read project package.json
+ * @returns 
+ */
+export async function getProjectPackageJson() {
+    const filePath = join("package.json");
+    const content = await readFile(filePath, 'utf-8');
+    return JSON.parse(content);
+}
+
+/**
  * Read and parse pzpw-config.json
  * @param basePath base path to search for pzpw-config.json
  * @returns object
