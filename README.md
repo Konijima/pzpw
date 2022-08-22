@@ -1,4 +1,4 @@
-# PZPW Compiler
+# PZPW
 
 [![Build](https://github.com/Konijima/pzpw/actions/workflows/Build.yml/badge.svg)](https://github.com/Konijima/pzpw/actions/workflows/Build.yml)
 [![npm version](https://badge.fury.io/js/pzpw.svg)](https://badge.fury.io/js/pzpw)
