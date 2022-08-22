@@ -1,0 +1,7 @@
+Add an additional mod to your project.
+::FULL::
+Command:
+    add <modId> <modName>
+
+Usage:
+    pzpw add "MyNewMod2" "My New Mod 2"

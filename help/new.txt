@@ -1,0 +1,7 @@
+Create a new PipeWrench project.
+::FULL::
+Command:
+    new <modId> <modName> <author>
+
+Usage:
+    pzpw new "MyNewMod" "My New Mod" "Konijima"

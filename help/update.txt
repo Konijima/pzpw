@@ -1,0 +1,10 @@
+Update pzpw, compiler and project dependencies.
+::FULL::
+Command:
+    pzpw update <all|pzpw|compiler|project>
+
+Usage:
+    pzpw update all
+    pzpw update pzpw
+    pzpw update compiler
+    pzpw update project

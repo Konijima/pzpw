@@ -5,4 +5,4 @@ Command:
 
 Usage:
     pzpw help
-    pzpw help update
+    pzpw help new

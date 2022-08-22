@@ -1,0 +1,8 @@
+Switch PipeWrench branch.
+::FULL::
+Command:
+    pzpw switch <stable|unstable>
+
+Usage:
+    pzpw switch stable
+    pzpw switch unstable

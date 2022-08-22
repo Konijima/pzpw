@@ -1,0 +1,9 @@
+Get or set game cachedir.
+::FULL::
+Command:
+    cachedir <get|set|unset> <path>
+
+Usages:
+    pzpw cachedir get
+    pzpw cachedir set "D:/Zomboid"
+    pzpw cachedir unset
