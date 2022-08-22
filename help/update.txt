@@ -6,5 +6,8 @@ Command:
 Usage:
     pzpw update all
     pzpw update pzpw
-    pzpw update compiler
     pzpw update project
+
+    [You can specify a custom package name/path]
+
+    pzpw update all -pzpw D:/pzpw -compiler D:/pzpw-compiler
