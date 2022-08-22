@@ -69,7 +69,57 @@ export class Cli {
             await getCommandHelp(command.params[0] as string, true).then(text => console.log(chalk.grey(text)))
                 .catch(_ => console.log(chalk.grey(`Command "${command.params[0] as string}" not found!`)));
 
+        else if (command.name === "new")
+            await this.newCommand(command.params);
+
+        else if (command.name === "add")
+            await this.addCommand(command.params);
+
+        else if (command.name === "cachedir")
+            await this.cachedirCommand(command.params);
+
+        else if (command.name === "update")
+            await this.updateCommand(command.params);
+
+        else if (command.name === "switch")
+            await this.switchCommand(command.params);
+
         else await getHelp().then(text => console.log(chalk.grey(text)));
+    }
+
+    /**
+     * Create a new pzpw project command
+     */
+    private async newCommand(params: (string | number)[]) {
+        await this.requirePZPWProject(false);
+    }
+
+    /**
+     * Add a mod to a pzpw project command
+     */
+    private async addCommand(params: (string | number)[]) {
+        await this.requirePZPWProject();
+    }
+
+    /**
+     * Get or set game cachedir path command
+     */
+    private async cachedirCommand(params: (string | number)[]) {
+        
+    }
+
+    /**
+     * Update command
+     */
+    private async updateCommand(params: (string | number)[]) {
+        
+    }
+
+    /**
+     * Switch branch command
+     */
+    private async switchCommand(params: (string | number)[]) {
+        await this.requirePZPWProject();
     }
 
 }
