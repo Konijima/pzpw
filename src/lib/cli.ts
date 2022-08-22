@@ -29,9 +29,12 @@ export class Cli {
     /**
      * Verify that the process is running inside a PZPW project.
      */
-    private requirePZPWProject() {
-        if (!this.pzpwConfig)
+    private requirePZPWProject(isRequired: boolean = true) {
+        if (isRequired && !this.pzpwConfig)
             throw chalk.red('This command must be executed from the root of your PZPW project.');
+
+        else if (!isRequired && this.pzpwConfig)
+            throw chalk.red('This command cannot be executed from the root of your PZPW project.');
     }
 
     /**
