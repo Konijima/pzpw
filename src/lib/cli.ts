@@ -37,8 +37,7 @@ export class Cli {
     }
 
     /**
-     *  
-     * @returns 
+     * Get the command and parameters
      */
     private getCommand() {
         const commandName = this.args[''].slice(0, 1)[0];
@@ -49,6 +48,9 @@ export class Cli {
         };
     }
 
+    /**
+     * Print full intro
+     */
     private async printIntro() {
         await getIntro().then(text => console.log(chalk.greenBright(text)));
     }
