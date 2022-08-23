@@ -20,7 +20,7 @@ export class Cli {
      */
      public async run() {
         this.settings = await Settings.Load();
-        this.pzpwConfig = await getPZPWConfig().catch(() => {});
+        await getPZPWConfig().then(pzpwConfig => this.pzpwConfig = pzpwConfig).catch(() => { /** ignore */ });
 
         await this.exec();
     }
