@@ -6,12 +6,7 @@ import { APP_PATH } from "./utils.js";
 export type SettingValue = string | number | boolean;
 
 export interface ISettings {
-    [key: string]: any
-    
-    /**
-     * Store default global cachedir
-     */
-    cachedir: string
+    [key: string]: unknown
 }
 
 export class Settings {
@@ -35,7 +30,7 @@ export class Settings {
             const content = await readFile(loadPath, 'utf-8');
             settings = JSON.parse(content) as ISettings;
         }
-        catch(error) { }
+        catch(error) { /** ignore */ }
         return new Settings(settings);
     }
 

@@ -55,7 +55,7 @@ export async function getIntro() {
  * @returns 
  */
 export async function getHelp() {
-    let result = ["AVAILABLE COMMANDS:\n"];
+    const result = ["AVAILABLE COMMANDS:\n"];
     const helpDir = join(APP_PATH, "help");
     const files = await readdir(helpDir);
     for (const file of files) {
@@ -70,7 +70,7 @@ export async function getHelp() {
  * Get command help text
  * @returns 
  */
-export async function getCommandHelp(commandName: string, full: boolean = false) {
+export async function getCommandHelp(commandName: string, full = false) {
     const content = await readFile(join(APP_PATH, "help", commandName + '.txt'), 'utf-8');
     return (full) ? content.replace("::FULL::", "").trim() : content.slice(0, content.indexOf("::FULL::")).trim();
 }

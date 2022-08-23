@@ -1,9 +1,9 @@
-name: Build
+name: Lint
 on: 
   push:
   pull_request:
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -13,4 +13,4 @@ jobs:
           cache: npm
           cache-dependency-path: package-lock.json
       - run: npm install
-      - run: npm run build
+      - run: npm run lint

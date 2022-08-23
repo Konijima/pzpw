@@ -1,14 +1,15 @@
-import chalk from 'chalk';
-import { writeFile } from 'fs/promises';
-import { resolve } from 'path';
 import sh from 'shelljs';
+import chalk from 'chalk';
+import { resolve } from 'path';
+import { writeFile } from 'fs/promises';
+import { PZPWConfig } from 'pzpw-config-schema';
 import { Settings } from './settings.js';
 import { getCommandHelp, getHelp, getIntro, getProjectPackageJson, getPZPWConfig } from './utils.js';
 
 export class Cli {
     
     private settings: Settings;
-    private pzpwConfig?: any;
+    private pzpwConfig?: PZPWConfig;
     readonly args: {[key: string]: (string | number)[]};
 
     constructor(args: {[key: string]: (string | number)[]}) {
@@ -28,7 +29,7 @@ export class Cli {
     /**
      * Verify that the process is running inside a PZPW project.
      */
-    private requirePZPWProject(isRequired: boolean = true) {
+    private requirePZPWProject(isRequired = true) {
         if (isRequired && !this.pzpwConfig)
             throw chalk.red('This command must be executed from the root of your PZPW project.');
 
@@ -59,7 +60,7 @@ export class Cli {
      * Execute commands
      */
     private async exec() {
-        let command = this.getCommand();
+        const command = this.getCommand();
 
         if (!command.name || command.name === 'help')
             await this.printIntro();
@@ -67,12 +68,12 @@ export class Cli {
         // Debug Flag
         if (this.args.debug) {
             console.log(chalk.magenta("Command:"), command);
-            console.log(chalk.magenta("Settings:"), this.settings.settings, '\n');
+            console.log(chalk.magenta("Settings:"), this.settings.settings, "\n");
         }
 
         if (command.name === "help" && command.params.length > 0)
             await getCommandHelp(command.params[0] as string, true).then(text => console.log(chalk.grey(text)))
-                .catch(_ => console.log(chalk.grey(`Command "${command.params[0] as string}" not found!`)));
+                .catch(() => console.log(chalk.grey(`Command "${command.params[0] as string}" not found!`)));
 
         else if (command.name === "new")
             await this.newCommand(command.params);
@@ -93,7 +94,7 @@ export class Cli {
             await this.compilerCommand(command.params);
 
         else if (command.name === "version")
-            await this.versionCommand(command.params);
+            await this.versionCommand();
 
         else await getHelp().then(text => console.log(chalk.grey(text)));
     }
@@ -222,7 +223,7 @@ export class Cli {
     /**
      * Print the current version command
      */
-    private async versionCommand(params: (string | number)[]) {
+    private async versionCommand() {
         await this.printIntro();
     }
 
