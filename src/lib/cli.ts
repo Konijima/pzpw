@@ -87,8 +87,6 @@ export class Cli {
         else if (command.name === "update")
             await this.updateCommand(command.params);
 
-        else if (command.name === "compiler")
-            await this.compilerCommand(command.params);
 
         else if (command.name === "version")
             await this.versionCommand();
@@ -257,19 +255,6 @@ export class Cli {
         if (!["all", "pzpw", "compiler", "project"].includes(params[0] as string)) {
             console.log(chalk.gray(await getCommandHelp("update", true)));
         }
-    }
-
-    /**
-     * Send a compiler command command
-     */
-    private async compilerCommand(params: (string | number)[]) {
-        const command = "pzpw-compiler " + params.join(" ");
-        console.log(chalk.yellowBright(`- Executing "${command}"...`));
-        const result = sh.exec(command, { silent: true });
-        if (result.stderr) {
-            console.log(chalk.red(result.stderr));
-        }
-        else console.log(chalk.gray(result.stdout));
     }
 
     /**

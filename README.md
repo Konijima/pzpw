@@ -47,10 +47,6 @@ pzpw switch <stable|unstable>
 ```
 pzpw update <all|pzpw|compiler|project>
 ```
-### Execute a compiler command.
-```
-pzpw compiler <command and args>
-```
 ### Set project cachedir, e.g: C:/Users/Konijima/Zomboid
 ```
 pzpw cachedir <get|set|unset>
