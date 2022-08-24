@@ -1,5 +1,6 @@
 import sh from "shelljs";
 import chalk from "chalk";
+import { existsSync } from "fs";
 import { join, resolve } from "path";
 import { mkdir, readFile, rm, writeFile } from "fs/promises";
 import { PZPWConfig } from "pzpw-config-schema";
@@ -155,20 +156,24 @@ export class Cli {
         await mkdir(join(modId, "src", modId, "shared", "Translate", "EN"), { recursive: true });
 
         // Update readme
-        console.log(chalk.yellowBright(`- Updating README.md...`));
-        let readme = await readFile(join(modId, "README.md"), "utf-8");
-        readme = readme.replaceAll("{modName}", modName);
-        readme = readme.replaceAll("{author}", modAuthor);
-        readme = readme.replaceAll("{modId}", modId);
-        readme = readme.replaceAll("{year}", new Date().getFullYear().toString());
-        await writeFile(join(modId, "README.md"), readme, 'utf-8');
+        if (existsSync(join(modId, "README.md"))) {
+            console.log(chalk.yellowBright(`- Updating README.md...`));
+            let readme = await readFile(join(modId, "README.md"), "utf-8");
+            readme = readme.replaceAll("{modName}", modName);
+            readme = readme.replaceAll("{author}", modAuthor);
+            readme = readme.replaceAll("{modId}", modId);
+            readme = readme.replaceAll("{year}", new Date().getFullYear().toString());
+            await writeFile(join(modId, "README.md"), readme, 'utf-8');
+        }
 
         // Update license
-        console.log(chalk.yellowBright(`- Updating LICENSE...`));
-        let license = await readFile(join(modId, 'assets', "LICENSE"), "utf-8");
-        license = license.replaceAll("<author>", modAuthor);
-        license = license.replaceAll("<year>", new Date().getFullYear().toString());
-        await writeFile(join(modId, "assets", "LICENSE"), license, 'utf-8');
+        if (existsSync(join(modId, 'assets', "LICENSE.txt"))) {
+            console.log(chalk.yellowBright(`- Updating LICENSE...`));
+            let license = await readFile(join(modId, 'assets', "LICENSE.txt"), "utf-8");
+            license = license.replaceAll("<author>", modAuthor);
+            license = license.replaceAll("<year>", new Date().getFullYear().toString());
+            await writeFile(join(modId, "assets", "LICENSE.txt"), license, 'utf-8');
+        }
 
         // Installing NPM dependencies
         console.log(chalk.yellowBright(`- Installing node modules...`));
