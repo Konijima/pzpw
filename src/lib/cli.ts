@@ -121,7 +121,7 @@ export class Cli {
         console.log(chalk.yellowBright(`- Cloning template '${templateRepo}' branch '${templateBranch}'...`));
 
         // Clone the template
-        const result = sh.exec(`git clone ${(templateBranch.length > 0) ? "-b " + templateBranch : ""} ${templateRepo} ${modId}`, { silent: true });
+        let result = sh.exec(`git clone ${(templateBranch.length > 0) ? "-b " + templateBranch : ""} ${templateRepo} ${modId}`, { silent: true });
 
         // Clone result
         if (String(result.stderr).startsWith("fatal:")) throw chalk.red(result.stderr);
@@ -170,7 +170,13 @@ export class Cli {
         license = license.replaceAll("<year>", new Date().getFullYear().toString());
         await writeFile(join(modId, "assets", "LICENSE"), license, 'utf-8');
 
-        console.log(chalk.greenBright(`Project created successfully, type 'cd ${modId}' to enter the project directory.`));
+        // Installing NPM dependencies
+        console.log(chalk.yellowBright(`- Installing node modules...`));
+        result = sh.exec(`cd ${modId} && npm update`, { silent: true });
+        if (result.stderr) console.log(chalk.red(result.stderr.trim()));
+        if (result.stdout) console.log(chalk.gray(result.stdout.trim()));
+
+        console.log(chalk.greenBright(`Project created successfully, type 'cd ${modId}' to enter project directory.`));
     }
 
     /**
