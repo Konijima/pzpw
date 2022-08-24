@@ -87,9 +87,6 @@ export class Cli {
         else if (command.name === "update")
             await this.updateCommand(command.params);
 
-        else if (command.name === "switch")
-            await this.switchCommand(command.params);
-
         else if (command.name === "compiler")
             await this.compilerCommand(command.params);
 
@@ -221,55 +218,6 @@ export class Cli {
 
         if (!["all", "pzpw", "compiler", "project"].includes(params[0] as string)) {
             console.log(chalk.gray(await getCommandHelp("update", true)));
-        }
-    }
-
-    /**
-     * Switch branch command
-     */
-    private async switchCommand(params: (string | number)[]) {
-        await this.requirePZPWProject();
-
-        const packageJson = await getProjectPackageJson();
-
-        if (params[0]) {
-            const branch = "#" + params[0];
-
-            const pipewrench = packageJson.dependencies["PipeWrench"];
-            if (pipewrench.includes("#")) packageJson.dependencies["PipeWrench"] = pipewrench.slice(0, pipewrench.indexOf("#")) + branch;
-            else packageJson.dependencies["PipeWrench"] += branch;
-
-            const pipewrenchEvents = packageJson.dependencies["PipeWrench-Events"];
-            if (pipewrenchEvents.includes("#")) packageJson.dependencies["PipeWrench-Events"] = pipewrenchEvents.slice(0, pipewrenchEvents.indexOf("#")) + branch;
-            else packageJson.dependencies["PipeWrench-Events"] += branch;
-
-            const pipewrenchUtils = packageJson.dependencies["PipeWrench-Utils"];
-            if (pipewrenchUtils.includes("#")) packageJson.dependencies["PipeWrench-Utils"] = pipewrenchUtils.slice(0, pipewrenchUtils.indexOf("#")) + branch;
-            else packageJson.dependencies["PipeWrench-Utils"] += branch;
-
-            // Update package.json
-            console.log(chalk.yellowBright(`- Updating package.json dependecies to branch '${params[0]}'...`));
-            await writeFile("package.json", JSON.stringify(packageJson, null, 2), "utf-8");
-
-            // Update project node_modules
-            console.log(chalk.yellowBright("- Updating Project dependencies..."));
-            const result = sh.exec("npm update", { silent: true });
-            if (result.stdout) console.log(chalk.gray(result.stdout));
-
-            // If error lets revert back
-            if (result.stderr) {
-                console.log(chalk.red(result.stderr));
-
-                packageJson.dependencies["PipeWrench"] = pipewrench;
-                packageJson.dependencies["PipeWrench-Events"] = pipewrenchEvents;
-                packageJson.dependencies["PipeWrench-Utils"] = pipewrenchUtils;
-                
-                console.log(chalk.yellowBright(`- Reverting package.json dependecies...`));
-                await writeFile("package.json", JSON.stringify(packageJson, null, 2), "utf-8");
-            }
-        }
-        else {
-            console.log(chalk.gray(await getCommandHelp("switch", true)));
         }
     }
 
