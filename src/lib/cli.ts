@@ -131,7 +131,7 @@ export class Cli {
         console.log(chalk.yellowBright(`- Unlinking .git from template...`));
         await rm(join(modId, ".git"), { recursive: true });
 
-        // Set pzpw-config.json
+        // Update pzpw-config.json
         console.log(chalk.yellowBright(`- Updating pzpw-config.json...`));
         const modConfig = JSON.parse(await readFile(join(modId, "pzpw-config.json"), "utf-8")) as PZPWConfig;
         modConfig.mods[modId] = {
@@ -169,6 +169,8 @@ export class Cli {
         license = license.replaceAll("<author>", modAuthor);
         license = license.replaceAll("<year>", new Date().getFullYear().toString());
         await writeFile(join(modId, "assets", "LICENSE"), license, 'utf-8');
+
+        console.log(chalk.greenBright(`Project created successfully, type 'cd ${modId}' to enter the project directory.`));
     }
 
     /**
