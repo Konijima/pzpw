@@ -176,6 +176,42 @@ export class Cli {
      */
     private async addCommand(params: (string | number)[]) {
         await this.requirePZPWProject();
+
+        // Get the mod id
+        const modId = params[0] as string;
+        if (!modId || modId.length === 0) throw chalk.red("You must provide a mod id as first parameter!");
+
+        // Get the mod name
+        const modName = params[1] as string;
+        if (!modName || modName.length === 0) throw chalk.red("You must provide a mod name as second parameter!");
+
+        // Read pzpw-config.json
+        const modConfig = JSON.parse(await readFile("pzpw-config.json", "utf-8")) as PZPWConfig;
+
+        // Check mod id already exist
+        if (modConfig.mods[modId]) throw chalk.red(`Mod '${modId}' already exist!`);
+
+        // Update pzpw-config.json
+        console.log(chalk.yellowBright(`- Updating pzpw-config.json...`));
+        modConfig.mods[modId] = {
+            name: modName,
+            description: ""
+        };
+        modConfig.workshop.mods.push(modId);
+        await writeFile("pzpw-config.json", JSON.stringify(modConfig, null, 2), "utf-8");
+
+        // Prepare mod assets
+        console.log(chalk.yellowBright(`- Prepare '${modId}' assets...`));
+        await copyDirRecursiveTo(join(".templates", "mod_assets"), join("assets", "mods", modId));
+
+        // Prepare mod source
+        console.log(chalk.yellowBright(`- Prepare '${modId}' source...`));
+        await mkdir(join("src", modId, "client", modId), { recursive: true });
+        await mkdir(join("src", modId, "server", modId), { recursive: true });
+        await mkdir(join("src", modId, "shared", modId), { recursive: true });
+        await mkdir(join("src", modId, "shared", "Translate", "EN"), { recursive: true });
+
+        console.log(chalk.greenBright(`Mod '${modId}' has been added successfully!`));
     }
 
     /**
