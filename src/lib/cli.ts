@@ -279,7 +279,7 @@ export class Cli {
         }
 
         else if (params[0] === "set") {
-            const key = params[1].toString();
+            const key = params[1] + "";
             const value = (parseFloat(params[2] as string)) ? Number(params[2]) : params[2];
             this.settings.set(key, value);
             this.settings.save();

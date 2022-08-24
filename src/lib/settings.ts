@@ -1,6 +1,6 @@
-import { join } from "path";
-import { readFile, writeFile } from "fs/promises";
-import { APP_PATH } from "./utils.js";
+import { homedir } from "os";
+import { dirname, join } from "path";
+import { mkdir, readFile, writeFile } from "fs/promises";
 
 export type SettingValue = string | number | boolean;
 
@@ -31,7 +31,7 @@ export class Settings {
     public static async Load() {
         let settings: ISettings;
         try {
-            const loadPath = join(APP_PATH, "global-settings.json");
+            const loadPath = join(homedir(), '.pzpw', "pzpw-settings.json");
             const content = await readFile(loadPath, 'utf-8');
             settings = JSON.parse(content) as ISettings;
         }
@@ -61,7 +61,8 @@ export class Settings {
      * Save current settings
      */
     public async save() {
-        const savePath = join(APP_PATH, "global-settings.json");
+        const savePath = join(homedir(), '.pzpw', "pzpw-settings.json");
+        await mkdir(dirname(savePath), { recursive: true });
         await writeFile(savePath, JSON.stringify(this.settings), 'utf-8');
     }
 }
