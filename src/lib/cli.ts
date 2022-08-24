@@ -4,7 +4,7 @@ import { join, resolve } from "path";
 import { mkdir, readFile, rm, writeFile } from "fs/promises";
 import { PZPWConfig } from "pzpw-config-schema";
 import { Settings } from "./settings.js";
-import { copyDirRecursiveTo, getCommandHelp, getHelp, getIntro, getProjectPackageJson, getPZPWConfig } from "./utils.js";
+import { copyDirRecursiveTo, getCommandHelp, getHelp, getIntro, getPZPWConfig } from "./utils.js";
 
 export class Cli {
     
@@ -87,6 +87,8 @@ export class Cli {
         else if (command.name === "update")
             await this.updateCommand(command.params);
 
+        else if (command.name === "setting")
+            await this.settingCommand(command.params);
 
         else if (command.name === "version")
             await this.versionCommand();
@@ -254,6 +256,27 @@ export class Cli {
 
         if (!["all", "pzpw", "compiler", "project"].includes(params[0] as string)) {
             console.log(chalk.gray(await getCommandHelp("update", true)));
+        }
+    }
+
+    /**
+     * Set PZPW global settings
+     */
+    private async settingCommand(params: (string | number)[]) {
+        if (params[0] === "get") {
+            console.log(params[1] + ": ", chalk.cyanBright(this.settings.get(params[1] as string)));
+        }
+
+        else if (params[0] === "set") {
+            const key = params[1].toString();
+            const value = (parseFloat(params[2] as string)) ? Number(params[2]) : params[2];
+            this.settings.set(key, value);
+            this.settings.save();
+            console.log(chalk.green(`Setting '${key}' is now '${value}'`));
+        }
+
+        else {
+            console.log(chalk.red(`First param must be 'get | set' but got '${params[0]}'!`));
         }
     }
 

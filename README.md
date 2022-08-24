@@ -39,17 +39,17 @@ pzpw new <modId> <modName> <author>
 ```
 pzpw add <modId> <modName>
 ```
-### Switch PipeWrench branch.
-```
-pzpw switch <stable|unstable>
-```
 ### Update pzpw, compiler and project dependencies.
 ```
 pzpw update <all|pzpw|compiler|project>
 ```
-### Set project cachedir, e.g: C:/Users/Konijima/Zomboid
+### Manage PZPW cachedir, e.g: C:/Users/Konijima/Zomboid
 ```
 pzpw cachedir <get|set|unset>
+```
+### Manage PZPW global settings
+```
+pzpw setting <get|set|unset>
 ```
 ### Check current pzpw version.
 ```

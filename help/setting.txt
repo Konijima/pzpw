@@ -1,0 +1,15 @@
+Set PZPW global settings
+::FULL::
+Command:
+    setting <get|set>
+
+Settings:
+    defaultAuthor  : string
+    templateRepo   : string
+    templateBranch : string
+
+Usage:
+    pzpw setting get templateRepo
+    pzpw setting set defaultAuthor Konijima
+    pzpw setting set templateRepo https://github.com/Konijima/pzpw-template.git
+    pzpw setting set templateBranch v2.0
