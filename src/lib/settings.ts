@@ -1,4 +1,3 @@
-import { homedir } from "os";
 import { join } from "path";
 import { readFile, writeFile } from "fs/promises";
 import { APP_PATH } from "./utils.js";
@@ -7,6 +6,10 @@ export type SettingValue = string | number | boolean;
 
 export interface ISettings {
     [key: string]: unknown
+
+    defaultAuthor: string
+    templateRepo: string
+    templateBranch: string
 }
 
 export class Settings {
@@ -15,7 +18,9 @@ export class Settings {
 
     constructor(settings?: ISettings) {
         this.settings = settings || {
-            cachedir: join(homedir(), 'Zomboid'),
+            defaultAuthor: "",
+            templateRepo: "https://github.com/Konijima/pzpw-template.git",
+            templateBranch: "v2.0",
         };
     }
 
@@ -39,8 +44,8 @@ export class Settings {
      * @param key 
      * @returns 
      */
-    public get(key: string) {
-        return this.settings[key];
+    public get<T>(key: string) {
+        return this.settings[key] as T;
     }
     
     /**
