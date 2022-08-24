@@ -1,6 +1,6 @@
 {
   "name": "pzpw",
-  "version": "2.0.0-alpha",
+  "version": "2.0.1-alpha",
   "description": "Node command-line tool to manage PZPW projects.",
   "main": "./dist/lib/cli.js",
   "type": "module",

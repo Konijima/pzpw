@@ -168,7 +168,7 @@ export class Cli {
 
         // Update license
         if (existsSync(join(modId, 'assets', "LICENSE.txt"))) {
-            console.log(chalk.yellowBright(`- Updating LICENSE...`));
+            console.log(chalk.yellowBright(`- Updating LICENSE.txt...`));
             let license = await readFile(join(modId, 'assets', "LICENSE.txt"), "utf-8");
             license = license.replaceAll("<author>", modAuthor);
             license = license.replaceAll("<year>", new Date().getFullYear().toString());
